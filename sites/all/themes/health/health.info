@@ -1,0 +1,41 @@
+name = Health
+core = 7.x
+package = core
+engine = phptemplate
+version = version
+
+; Stylesheets
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/fonts.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/font-awesome.min.css
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[print][] = css/print.css
+stylesheets[print][] = css/swipebox.css
+
+; Scripts
+;scripts[] = js/jquery.min.js
+scripts[] = js/bootstrap.min.js
+scripts[] = js/scripts.js
+scripts[] = js/jquery.swipebox.min.js
+
+; Regions
+regions[content] = content
+regions[header] = Header
+regions[language] = Language
+regions[top-menu] = Top Menu
+regions[search] = Search
+regions[slider] = Slider
+regions[logos] = Logos
+regions[pakalpojumi] = PAKALPOJUMI
+regions[pilsetas] = Pilsetas
+regions[contact] = Contact
+regions[left-sidebar] = Left Sidebar
+regions[right-sidebar] = Right Sidebar
+regions[jaunumi-slider] = Jaunumi Slider
+regions[calendar] = Calendar
+regions[footer-left] = Footer-Left
+regions[footer-right] = Footer-Right
+regions[footer-middle] = Footer-Middle
+regions[top-contact] = Top-Contact
+regions[footer] = Footer

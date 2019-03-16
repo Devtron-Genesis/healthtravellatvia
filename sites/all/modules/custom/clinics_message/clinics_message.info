@@ -1,0 +1,4 @@
+name = Clinics Feedback form messages
+Description = Module to manage Messages from feedback form
+core = 7.x
+package = Custom

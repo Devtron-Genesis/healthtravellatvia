@@ -1,0 +1,95 @@
+<?php
+
+define('manifest_NAME', variable_get('site_name', 'Default site name'));
+define('manifest_SHORTNAME', variable_get('site_name', 'Default site name'));
+define('manifest_DESCRIPTION', null);
+define('manifest_DISPLAY', null);
+define('manifest_STARTURL', null);
+define('manifest_ORIENTATION', null);
+define('manifest_BACKCOLOR', '#ffffff');
+define('manifest_THEMECOLOR', '#ffffff');
+define('manifest_ICON', null);
+
+
+function manifest_permission()
+{
+    return array(
+    'administer manifest' => array(
+      'title' => t('Administer manifest'),
+      'description' => t('Enalbe permission for manifest file'),
+    ),
+  );
+}
+
+function manifest_menu()
+{
+    $items = [];
+
+    $items['admin/manifest/manifest'] = array(
+    'title' => 'Manifest',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('manifest_admin_form'),
+    'access arguments' => array('administer manifest'),
+    'file' => 'manifest.admin.inc',
+    'file path' => drupal_get_path('module', 'manifest'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+    return $items;
+}
+
+function manifest_public_folder()
+{
+    $directory = file_default_scheme() . '://manifest';
+    file_prepare_directory(
+    $directory,
+    FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS
+  );
+}
+
+function manifest_create()
+{
+    manifest_public_folder();
+    
+    $data['name'] = variable_get('manifest_name', manifest_NAME);
+    $data['short_name'] = variable_get('manifest_shortname', manifest_SHORTNAME);
+    $data['description'] = variable_get('manifest_description', manifest_DESCRIPTION);
+    $data['start_url'] = variable_get('manifest_starturl', manifest_STARTURL);
+    $data['display'] = variable_get('manifest_display', manifest_DISPLAY);
+    $data['orientation'] = variable_get('manifest_orientation', manifest_ORIENTATION);
+    $data['background_color'] = variable_get('manifest_backcolor', manifest_BACKCOLOR);
+    $data['theme_color'] = variable_get('manifest_themecolor', manifest_THEMECOLOR);
+
+
+    $sizes = ['48x48', '72x72', '96x96', '144x144', '168x168', '192x192'];
+    $icon = [];
+    foreach ($sizes as $size) {
+        $icon[] = [
+          'src' => variable_get('manifest_icon', manifest_ICON),
+          'type' => 'image/svg',
+          'sizes' =>  $size
+        ];
+    }
+    $data['icons'] = $icon;
+
+    $manifest_public = file_unmanaged_save_data(
+      json_encode($data, JSON_PRETTY_PRINT),
+      file_default_scheme().'://manifest/manifest.json',
+      FILE_EXISTS_REPLACE
+    );
+    $manifest_url = file_create_url($manifest_public);
+
+    drupal_alter('manifest_file', $manifest_url);
+    variable_set('manifest_file', str_replace($GLOBALS['base_url'] . '/', base_path(), $manifest_url));
+}
+
+function manifest_preprocess_html(&$variables)
+{
+    drupal_add_html_head([
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => 'manifest',
+        'href' => variable_get('manifest_file', ''),
+      ],
+    ], 'manifest');
+}

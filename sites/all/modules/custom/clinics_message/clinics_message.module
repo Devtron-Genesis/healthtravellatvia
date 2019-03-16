@@ -1,0 +1,84 @@
+<?php
+
+function clinics_message_form_alter(&$form,&$form_state,$form_id){
+	if($form_id == 'webform_client_form_164' && arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))){
+		//echo "<pre>"; print_r($form);exit;
+		$form['submitted']['medicinas_pakalpojumi']['#default_value'] = arg(2);
+
+		// $form['#node']->webform['emails'][2] = $form['#node']->webform['emails'][1];
+		// $form['#node']->webform['emails'][2]['email'] = 'bharat.kelotra007@gmail.com';
+
+		
+	}
+	if($form_id == 'webform_client_form_164'){
+		global $language;
+
+		if($language->language == 'lv'){
+			$form['#node']->webform['redirect_url'] = "paldies?sid=[submission:sid]";
+		}else if ($language->language == 'ru'){
+			$form['#node']->webform['redirect_url'] = "spasibo?sid=[submission:sid]";
+		}
+		$form['#validate'][] = '_clinics_message_validate';		
+	}
+}
+
+function clinics_message_webform_submission_create_alter(&$submission, &$node, &$account, &$form_state) {
+  //echo "<pre>"; print_r($submission); print_r($node); print_r($form_state); exit;
+}
+
+function _clinics_message_validate(&$form,$form_state){
+	//$category = $form_state['values']['']
+	$i = 40;
+	$service_termid = $form_state['values']['submitted']['medicinas_pakalpojumi'];
+	$query = new EntityFieldQuery();
+	$query
+	  ->entityCondition('entity_type', 'node', '=')
+	  ->entityCondition('bundle', 'iestade')
+	  ->propertyCondition('status', 1, '=')
+	  ->fieldCondition('field_pakalpojumi', 'tid', $service_termid);
+	$result = $query->execute();
+
+	// if(get_client_ip() != '43.229.226.238'){ 
+		foreach ($result['node'] as $key => $value) {
+			$node = node_load($key);
+			$i++;
+			if (isset($node->field_lestades_lietotajs['und'][0]['target_id']) && !empty($node->field_lestades_lietotajs['und'][0]['target_id'])) {
+				
+				$u_target = $node->field_lestades_lietotajs['und'][0]['target_id'];
+				$user_data = user_load($u_target);
+				$form['#node']->webform['emails'][$i] = $form['#node']->webform['emails'][1];
+				$form['#node']->webform['emails'][$i]['email'] = $user_data->mail;
+				$form['#node']->webform['emails'][$i]['from_name'] = $form_state['values']['submitted']['vards_uzvards'];
+				$form['#node']->webform['emails'][$i]['from_address']=$form_state['values']['submitted']['jusu_e_pasts'];			
+
+			}	
+			
+		}
+	// }else{
+	// 	$form['#node']->webform['emails'][1]['email'] = 'nehajain6516@gmail.com';
+	// }
+	
+
+	if(isset($form['#node']->webform['emails'][2]) && $form['#node']->webform['emails'][2]['email'] == 'carelatvia@gmail.com'){
+		$form['#node']->webform['emails'][2]['template'] = $form['#node']->webform['emails'][1]['template'];
+	}	
+}
+
+function get_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}

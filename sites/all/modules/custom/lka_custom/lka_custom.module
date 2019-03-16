@@ -1,0 +1,52 @@
+<?php
+
+
+/**
+ * Implements hook_init().
+ */
+function lka_custom_init () {
+  drupal_add_js(drupal_get_path('module', 'lka_custom').'/lka_custom.js');
+}
+
+/**
+ * Implements hook_views_slideshow_widget_info().
+ */
+function lka_custom_views_slideshow_widget_info() {
+  return array(
+    'lka_custom' => array(
+      'name' => t('LKA'),
+      'accepts' => array(
+        'transitionBegin' => array('required' => TRUE),
+      ),
+      'calls' => array(),
+    ),
+  );
+}
+
+function lka_custom_form_alter(&$form, &$form_state, $form_id)
+{
+  if($form_id == 'webform_client_form_139')
+  {
+    //$form['#action'] = url('node/169');
+    $form['actions']['submit']['#value'] = t('Send');
+  }
+  
+    if($form_id == 'search_block_form') {
+        $form['#submit'] = array('lka_custom_redirectTo');
+    }
+}
+
+/**
+ * Implements hook_form_submit().
+ */
+function lka_custom_redirectTo($form, &$form_state) {
+    if(!empty($form_state['values']['search_block_form'])) {
+        drupal_goto('csearch',array('query'=>array('keys'=>$form_state['values']['search_block_form'])));
+    }
+}
+
+function lka_custom_search_api_query_alter($query) {
+  global $language;
+  dsm($info);
+      dsm(1);
+}

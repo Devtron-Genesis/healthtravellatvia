@@ -1,0 +1,4 @@
+name = Clinic's Services
+description = Services related to particular clinics.
+package = Other
+core = 7.x

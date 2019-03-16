@@ -1,0 +1,55 @@
+.print-front{
+	display: none;
+}
+.footer-mid{
+	display: none;
+}
+.print-footer{
+	float: right !important;
+}
+.footer {
+    background: #a5cd2e !important;
+    color: #fff !important;
+}
+.PAKALPOJUMI p {
+	padding-top: 5px !important;
+	font-size: 14px !important;
+	margin-bottom: 3px !important;
+}
+.region-jaunumi-slider{
+	margin-top: 5px;
+}
+.news-front .view-jaunumi .item-list{
+	display: none;
+}
+.col-half-offset .home-box img {
+    width: 70%;
+}
+.region-language{
+	display: none;
+}
+.contact_form_mob_view{
+	width: 28% !important;
+}
+.i18n-en .all-clinics .limit-body{height: 150px;}
+.i18n-lv .all-clinics .limit-body{height: 150px;}
+.i18n-ru .all-clinics .limit-body{height: 150px;}
+.clinics_border {
+    padding: 7px 8px 60px 8px;
+}
+.all-clinics .limit-address {
+    height: 120px;
+}
+.taxonomy-term-description img{
+	width: 200px;
+	height: 200px;
+}
+#content a:link:after, #content a:visited:after {
+  content: "";
+}
+.noprint {display:none !important;}
+ a:link:after, a:visited:after {  
+      display: none;
+      content: "";  
+      }
+  }

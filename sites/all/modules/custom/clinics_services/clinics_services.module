@@ -1,0 +1,64 @@
+<?php
+function clinics_services_block_info() {    
+  $blocks['clinics_services'] = array(
+    // info: The name of the block.
+    'info' => t('clinics services'),
+  );
+
+  return $blocks;
+}
+
+
+function clinics_services_block_view($delta = '') {
+  // The $delta parameter tells us which block is being requested.
+	$term_tree_data = array();
+	$term_tree = array();
+	$option = array();
+  switch ($delta) {
+    case 'clinics_services':
+      // Create your block content here
+      $block['subject'] = t("Clinic's Services");
+
+    $block['content'] = '';
+
+    $arg1 = arg(1);
+    if (!empty($arg1) && is_numeric($arg1)) {
+    	
+    	$node = node_load(arg(1));
+		//echo "<pre>"; print_r($node->field_pakalpojumi['und']); exit();
+		foreach ($node->field_pakalpojumi['und'] as $key => $value) {
+			//$term = taxonomy_term_load($value['tid']);
+			//echo "<pre>"; print_r($value);
+	        if(empty($term_tree_data)){
+	          $term_tree_data = taxonomy_get_tree($value['taxonomy_term']->vid,0,1);
+	          foreach($term_tree_data as $tree_data){
+	            $term_tree[] = $tree_data->tid;
+	          }
+	          
+	        }
+	        
+	        if (in_array($value['tid'], $term_tree)) {
+	        	//echo "<pre>"; print_r($value); 
+            	$option[$value['tid']] = $value['taxonomy_term']->name;
+        	}
+			
+		}
+
+    }
+      asort($option);
+    	//echo "<pre>"; print_r($option); exit();
+    	$block['content'] .= '<div class="item-list"><ul class="menu">';
+    	foreach ($option as $termid => $op) {
+    		$termpath = drupal_get_path_alias('taxonomy/term/'.$termid.'');
+    		//echo "<pre>"; print_r($termpath); 
+    		//echo $path_term = print base_path().'/taxonomy/term/'.$termid;
+    		$block['content'] .= '<li><a href="'.$termpath.'">'.$op.'</a></li>';
+    	}
+
+    	$block['content'] .= '</ul></div>';
+
+     break;
+   }
+
+  return $block;
+}

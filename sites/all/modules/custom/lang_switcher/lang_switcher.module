@@ -1,0 +1,47 @@
+<?php
+ 
+
+/**
+ * Implements hook_block_info().
+ */
+function lang_switcher_block_info() {
+  $blocks['lang_switcher'] = array(
+    'info' => t('Custom Language Switcher'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function lang_switcher_block_view($delta = '') {
+   
+  global $base_path; 
+  global $base_url; 
+  drupal_add_css($base_url.'/'.drupal_get_path('module', 'lang_switcher').'/css/lang.css', 'external');
+  $variables = array();
+  $block = array();
+  switch($delta) {
+    case 'lang_switcher':
+    $block['subject'] = t("Custom Language Switcher"); 
+    $block['content'] = theme('lang_switcher',$variables);
+    break;
+  }
+  return $block;  
+}
+
+
+//implementation of hook_theme
+function lang_switcher_theme() {
+
+  return array(
+    'lang_switcher' => array(
+      'variables' => array(),
+      'template' => 'lang_switcher',
+    ),
+  );
+}
+ 
+ 
+?>

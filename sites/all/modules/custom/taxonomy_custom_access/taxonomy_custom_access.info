@@ -1,0 +1,3 @@
+name = Taxonomy Custom access
+description = Allows users to add, edit and delete permissions on specific vocabulary
+core = 7.x

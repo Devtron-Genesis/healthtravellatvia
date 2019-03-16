@@ -1,0 +1,43 @@
+<?php
+/*
+function city_term_lang_views_query_alter(&$view, &$query)
+{
+	global $language;
+	if($view->name == 'pilsetas')
+	{
+		$query->where[] = array(
+		  'conditions' => array(array(
+		    'field' => 'taxonomy_term_data.language',
+		    'value' => array($language->language, 'und'),
+		    'operator' => 'in',
+		  )),
+		  'args' => array(),
+		  'type' => 'AND',
+		);
+	}
+}
+*/
+function city_term_lang_form_alter(&$form, &$form_state, $form_id){
+	if($form['#id'] == 'views-exposed-form-iestades-block'){
+		global $language;
+		
+		$result = db_select('taxonomy_term_data', 'terms')
+				->fields('terms', array('tid', 'name'))
+				->condition(db_or()
+					->condition('language', $language->language, '=')
+					->condition('language', 'und', '='))
+				->condition('vid', 2, '=')
+				->orderby('name')
+				->execute()
+				->fetchAll();
+				
+		$options = array_slice($form['pilseta']['#options'], 0, 1, TRUE);
+		
+		foreach($result as $term){
+			
+			$options[$term->tid] = $term->name;
+		}
+		
+		$form['pilseta']['#options'] = $options;	
+	}
+}

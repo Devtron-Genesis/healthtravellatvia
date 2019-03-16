@@ -1,0 +1,48 @@
+
+--- a/google_recaptcha.admin.inc
++++ b/google_recaptcha.admin.inc
+@@ -54,14 +54,6 @@ Be careful if You have several sites - check that this pair of keys exactly for
+     '#maxlength' => 40,
+     '#required' => TRUE,
+   );
+-  $form['language'] = array(
+-    '#title' => t('Google reCAPTCHA language'),
+-    '#description' => t('Enter the language code that can be found here: https://developers.google.com/recaptcha/docs/language'),
+-    '#type' => 'textfield',
+-    '#default_value' => empty($tune['settings']['language']) ? 'en' : $tune['settings']['language'],
+-    '#size' => 10,
+-    '#maxlength' => 10,
+-  );
+   $form['widget_size'] = array(
+     '#title' => t('Widget size'),
+     '#type' => 'select',
+@@ -126,7 +118,6 @@ function g_tune_submit($form, &$form_state) {
+   $tune['settings']['write_log'] = $form_state['values']['write_log'];
+   $tune['settings']['widget_size'] = $form_state['values']['widget_size'];
+   $tune['settings']['widget_theme'] = $form_state['values']['widget_theme'];
+-  $tune['settings']['language'] = $form_state['values']['language'];
+ 
+   // reset statistics data if was disabled
+   if ($form_state['values']['collect_statistics'] == 0) {
+diff --git a/google_recaptcha.under_hood.inc b/google_recaptcha.under_hood.inc
+index bfd2e5e..8957224 100644
+--- a/google_recaptcha.under_hood.inc
++++ b/google_recaptcha.under_hood.inc
+@@ -8,12 +8,10 @@
+  * Add captcha
+  */
+ function g_add_captcha(&$form, $form_id) {
++  global $language;
+   $tune = variable_get('google_recaptcha');
+ 
+-  $url = 'https://www.google.com/recaptcha/api.js?onload=google_recaptcha_onload&render=explicit';
+-  if (!empty($tune['settings']['language'])) {
+-    $url .= '&hl=' . $tune['settings']['language'];
+-  }
++  $url = 'https://www.google.com/recaptcha/api.js?onload=google_recaptcha_onload&render=explicit&hl=' . $language->language;
+ 
+   $recaptcha_api = array(
+     'data' => $url,
+-- 
+2.5.0
+

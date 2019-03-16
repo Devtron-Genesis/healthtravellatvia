@@ -1,0 +1,4 @@
+name = LKA custom
+description = LKA custom functions
+package = LKA
+core = 7.x

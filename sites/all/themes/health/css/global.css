@@ -1,0 +1,1426 @@
+html, body {
+  height: 100%;
+}
+body,div,dl,dt,dd/*ul,ol,li*/,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td {
+  margin:0;
+  padding:0;
+  font-weight: normal;
+  line-height: normal;
+}
+body {
+  background: #e1eee4;
+  font-family: Tahoma, sans-serif;
+  color: #373537;
+  overflow-y: scroll;
+  font-size: 11px;
+  line-height: 15px;
+}
+body.medium {
+  font-size: 13px;
+  line-height: 17px;
+}
+body.large {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size:100%;
+  font-weight:normal;
+  font-family: Tahoma, sans-serif;
+  letter-spacing: normal;
+  color: #6ea2b0;
+}
+h1,
+h2.node-title {
+  font-size:2.2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: Tahoma, sans-serif;
+  margin-bottom: 20px;
+}
+h2 {font-size: 1.3em;font-weight: 700;}
+h3 {font-size: 1.1em;font-weight: 700;}
+h4 {font-size: 1em; font-weight: 700;text-transform: uppercase; text-align: center;}
+
+h2.node-title {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  line-height: 1.2em;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #6ea2b0;
+}
+a:hover,
+a.active,
+li a.active {
+  color: #6ea2b0;
+}
+
+table, tbody, tfoot, thead, tr, th, td {
+  vertical-align: top;
+}
+p {
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+#section-header {
+
+}
+.zone-header,
+.zone-preface {
+  background: #fff;
+}
+.section-content {
+  margin-bottom: 30px;
+}
+.zone-header {
+  position: relative;
+  height: 150px;
+}
+.region-branding {
+  text-align: center;
+  margin-right: 0 !important;
+}
+.logo-img {
+  float: none;
+  margin: 0;
+}
+#region-header-first {
+  float: right;
+  width: auto;
+  margin-top: 10px;
+}
+#region-header-second {
+  width: auto;
+  margin: 0;
+  position: static;
+}
+.zone-content {
+  background: #ecf6ee url(../img/content_bg.jpg) no-repeat left bottom;
+  border-top: 2px dotted #c4ddda;
+  padding:0;
+}
+.region-content {
+  background: #fff;
+  width: 602px !important;
+  margin: 0 !important;
+  min-height: 300px;
+}
+.region-content .region-content-inner {
+  margin: 30px 25px;
+}
+.region-sidebar-first {
+  width: 174px !important;
+  margin: 0 !important;
+}
+.region-sidebar-second {
+  width: 184px !important;
+  margin: 0 !important;
+}
+.region-sidebar-first,
+.region-sidebar-second {
+  padding: 30px 0;
+}
+.region-preface-first {
+  margin: 0 !important;
+  width: 960px !important;
+}
+.region-footer-first {
+  height: 60px;
+  width: 602px !important;
+  margin: 0 !important;
+  padding-left: 174px !important;
+  padding-right: 184px !important;
+  border-top: 2px dotted #c4ddda;
+  color: #95b7c3;
+  font-size: 0.9em;
+}
+.region-footer-first .region-inner {
+  padding-top: 10px;
+}
+#block-block-2 {
+  float: left;
+}
+#block-block-3 {
+  float: right;
+}
+a.fb {
+  display: block;
+  text-indent: -10000px;
+  width: 32px;
+  height: 32px;
+  background: url(../img/fb.png) no-repeat center;
+}
+a.fb:hover {
+  background: url(../img/fb_on.png) no-repeat center;
+}
+
+.block-system-main {
+  position: relative;
+}
+
+/* Slideshow */
+
+.views_slideshow_main {
+  float: left;
+  width: 776px;
+  position: relative;
+}
+.views_slideshow_main .views_slideshow_slide .apraksts-wrapper {
+  width: 287px;
+  height: 387px;
+  background: url(../img/aprakts_bg.png) repeat center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+.views_slideshow_main .views_slideshow_slide .apraksts-wrapper .apraksts {
+  padding: 15px;
+}
+.views_slideshow_main .views_slideshow_slide .apraksts h2.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.views_slideshow_main .views_slideshow_slide .apraksts .box {
+  height: 290px;
+  width: 260px;
+  margin-top: 40px;
+}
+.views_slideshow_main .views_slideshow_slide .apraksts .box .box-inner {
+  padding-right: 15px;
+}
+.views-slideshow-controls-bottom {
+  width: 184px;
+  padding-top: 110px;
+  position: relative;
+  float: left;
+}
+.views-slideshow-controls-bottom img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.views-slideshow-pager-fields {
+  z-index: 2;
+  position: relative;
+}
+.views-slideshow-pager-field-item {
+  z-index: 2;
+  width: 70px;
+  margin: 0;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+}
+.views-slideshow-pager-field-item.active{
+  background: #bed730;
+}
+.views-slideshow-pager-field-item a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.punkts {
+  width: 5px;
+  height: 5px;
+  display: block;
+  background: url(../img/punkts.png) no-repeat center;
+  text-indent: -10000px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 3;
+}
+.pilseta_punkts.active .punkts,
+.pilseta_punkts .punkts.active {
+  display: block;
+  background: url(../img/punkts_active.png) no-repeat center;
+  z-index: 10;
+}
+
+.views-slideshow-controls-top {
+  width: 489px;
+  position: absolute;
+  left: 0;
+  top: 180px;
+  z-index: 10;
+}
+.views-slideshow-controls-top .views-slideshow-controls-text-pause {
+  display: none;
+}
+.views-slideshow-controls-top .views-slideshow-controls-text-previous {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-indent: -10000px;
+  background: url(../img/prev.png) no-repeat center;
+  position: absolute;
+  left:0;
+  top: 0;
+}
+.views-slideshow-controls-top .views-slideshow-controls-text-previous:hover {
+  background: url(../img/prev_hover.png) no-repeat center;
+}
+.views-slideshow-controls-top .views-slideshow-controls-text-next {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-indent: -10000px;
+  background: url(../img/next.png) no-repeat center;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+.views-slideshow-controls-top .views-slideshow-controls-text-next:hover {
+  background: url(../img/next_hover.png) no-repeat center;
+}
+
+.slimScrollRail {
+  border: 1px solid #b2babb;
+  border-radius: 0 !important;
+  height: 288px !important;
+}
+.slimScrollBar {
+  border-radius: 0 !important;
+  margin-right: 1px;
+}
+
+#block-block-5 {
+  margin: 10px 0 30px 0;
+}
+
+#block-block-5 a {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 10px;
+  background: #c7d9d9;
+  margin: 0 20px 0 10px;
+  color: #fff;
+}
+
+#block-views-slideshow-block {
+  float: left;
+  width: 777px;
+  position: relative;
+}
+#block-views-slideshow-block .views-slideshow-controls-top {
+  width: 776px;
+}
+
+#block-views-pilsetas-block-1 {
+  width: 183px;
+  height: 387px;
+  position: relative;
+  float: left;
+  background: url(../img/karte.jpg) no-repeat center top;
+}
+#block-views-pilsetas-block-1 .view-content {
+  padding-top: 110px;
+}
+#block-views-pilsetas-block-1 .view-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+#block-views-pilsetas-block-1 .views-row a {
+  z-index: 10;
+  width: 70px;
+  margin: 0;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+#block-views-pilsetas-block-1 .views-row a:hover {
+  background: #bed730;
+}
+
+.view-pilseta .views-row {
+  background: url(../img/item.jpg) no-repeat left center;
+  padding-left: 20px;
+  margin: 3px 0;
+}
+
+.view-pilsetas .views-slideshow-controls-text {
+  display: none;
+}
+
+/* Iestādes */
+
+.node-type-iestade .region-content-inner {
+  position: relative;
+}
+.node-type-iestade h1.title {
+  margin-left: 112px;
+  min-height: 70px;
+  margin-bottom: 10px;
+  margin-right: 110px;
+}
+.node-iestade.view-mode-full .field-name-field-logo {
+  position: absolute;
+  top: -98px;
+  right: 0;
+}
+.node-iestade.view-mode-full .field-name-field-bilde {
+  width: 102px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+}
+.node-iestade.view-mode-full .field-name-field-bilde .field-item {
+  margin-bottom: 5px;
+}
+.node-iestade.view-mode-full .field-name-field-www {
+  margin-top: 10px;
+}
+.node-iestade.view-mode-full .field-name-field-pakalpojumi {
+  margin-left: 112px;
+}
+.node-iestade.view-mode-full .field-name-field-pakalpojumi .field-item {
+  background: url(../img/item.jpg) no-repeat left center;
+  padding-left: 20px;
+  margin: 3px 0;
+}
+.node-iestade.view-mode-full .field-name-field-pakalpojumi .field-item a {
+  color: #231f20;
+}
+
+/* Pakalpojumi */
+
+.view-display-id-pakalpojumi {
+  margin: 0 auto;
+  width: 910px;
+}
+.view-display-id-pakalpojumi .views-row {
+  position: relative;
+  float: left;
+  width: 110px;
+  margin: 25px 10px;
+  text-align: center;
+}
+
+.view-display-id-pakalpojumi .views-row .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-top: 15px;
+  color: #6EA2B0;
+}
+.view-display-id-pakalpojumi .views-row .link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 110px;
+  height: 140px;
+  text-indent: -10000px;
+  background: url(../img/x.gif);
+}
+.view-display-id-pakalpojumi .views-row .on {
+  display: none;
+}
+.view-display-id-pakalpojumi .views-row.active .off,
+.view-display-id-pakalpojumi .views-row:hover .off {
+  display: none;
+}
+.view-display-id-pakalpojumi .views-row.active .on,
+.view-display-id-pakalpojumi .views-row:hover .on {
+  display: block;
+}
+
+.view-display-id-pakalpojumi_saraksts .views-row {
+  margin: 3px 0;
+  width: 220px;
+  float: left;
+}
+.view-display-id-pakalpojumi_saraksts .views-row a {
+  display: inline-block;
+  color: #231f20;
+  background: url(../img/item.jpg) no-repeat left center;
+  padding-left: 20px;
+}
+
+.taxonomy-term-parent-is-36 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-4 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-42 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-surgery .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-kirurgija .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-hirurgiya .view-display-id-pakalpojumi_saraksts .views-row a:hover
+{
+  background-image: url(../img/kirurgija-item.jpg);
+  color: #de978d;
+}
+.taxonomy-term-parent-is-36 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-4 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-42 .view-iestades ul.menu li a:hover,
+.context-surgery .view-iestades ul.menu li a:hover,
+.context-hirurgiya .view-iestades ul.menu li a:hover,
+.context-kirurgija .view-iestades ul.menu li a:hover{
+  background: #de978d;
+}
+
+.taxonomy-term-parent-is-1 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-47 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-mediciniska-rehabilitacija .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-33 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-medicinskaya-reabilitaciya .view-display-id-pakalpojumi_saraksts .views-row a:hover
+{
+  background-image: url(../img/med-item.jpg);
+  color: #9dc8bb;
+}
+
+.taxonomy-term-parent-is-1 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-47 .view-iestades ul.menu li a:hover,
+.context-mediciniska-rehabilitacija .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-33 .view-iestades ul.menu li a:hover,
+.context-medicinskaya-reabilitaciya .view-iestades ul.menu li a:hover{
+  background: #9dc8bb;
+}
+
+.taxonomy-term-parent-is-34 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-2 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-46 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-sport-fitness .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-skaistumkopsana-fitness .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-peldesanas-maciba .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-sports-fitness .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-sport-fitnes .view-display-id-pakalpojumi_saraksts .views-row a:hover {
+  background-image: url(../img/skaistums-item.jpg);
+  color: #9ac0cf;
+}
+
+.taxonomy-term-parent-is-34 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-2 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-46 .view-iestades ul.menu li a:hover,
+.context-sport-fitness .view-iestades ul.menu li a:hover,
+.context-skaistumkopsana-fitness .view-iestades ul.menu li a:hover,
+.context-peldesanas-maciba .view-iestades ul.menu li a:hover,
+.context-sports-fitness .view-iestades ul.menu li a:hover,
+.context-sport-fitnes .view-iestades ul.menu li a:hover{
+  background: #9ac0cf;
+}
+
+.taxonomy-term-parent-is-35 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-3 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-49 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-skaistumkopsana-spa .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-spa .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-spa-1 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-spa-0 .view-display-id-pakalpojumi_saraksts .views-row a:hover {
+  background-image: url(../img/spa-item.jpg);
+  color: #bed730;
+}
+
+.taxonomy-term-parent-is-35 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-3 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-49 .view-iestades ul.menu li a:hover,
+.context-skaistumkopsana-spa .view-iestades ul.menu li a:hover,
+.context-spa .view-iestades ul.menu li a:hover,
+.context-spa-1 .view-iestades ul.menu li a:hover,
+.context-spa-0 .view-iestades ul.menu li a:hover{
+  background: #bed730;
+}
+
+.taxonomy-term-parent-is-37 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-5 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-43 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-stomotology .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-zobarstnieciba .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-stomatologiya .view-display-id-pakalpojumi_saraksts .views-row a:hover
+{
+  background-image: url(../img/zobarsti-item.jpg);
+  color: #faa864;
+}
+
+.taxonomy-term-parent-is-37 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-5 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-43 .view-iestades ul.menu li a:hover,
+.context-stomotology .view-iestades ul.menu li a:hover,
+.context-zobarstnieciba .view-iestades ul.menu li a:hover,
+.context-stomatologiya .view-iestades ul.menu li a:hover{
+  background: #faa864;
+}
+
+.taxonomy-term-parent-is-38 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-6 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-50 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-special-offers .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-ipasie-piedavajumi .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-osobye-predlozheniya .view-display-id-pakalpojumi_saraksts .views-row a:hover
+{
+  background-image: url(../img/piedavajumi-item.jpg);
+  color: #ffc545;
+}
+
+.taxonomy-term-parent-is-38 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-6 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-50 .view-iestades ul.menu li a:hover,
+.context-special-offers .view-iestades ul.menu li a:hover,
+.context-ipasie-piedavajumi .view-iestades ul.menu li a:hover,
+.context-osobye-predlozheniya .view-iestades ul.menu li a:hover{
+  background: #ffc545;
+}
+
+.taxonomy-term-parent-is-39 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-7 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.taxonomy-term-parent-is-48 .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-atbalsts-celotajam .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-travelers .view-display-id-pakalpojumi_saraksts .views-row a:hover,
+.context-podderzhka-dlya-turistov .view-display-id-pakalpojumi_saraksts .views-row a:hover
+{
+  background-image: url(../img/atbalsts-item.jpg);
+  color: #ffdd30;
+}
+
+.taxonomy-term-parent-is-39 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-7 .view-iestades ul.menu li a:hover,
+.taxonomy-term-parent-is-48 .view-iestades ul.menu li a:hover,
+.context-atbalsts-celotajam .view-iestades ul.menu li a:hover,
+.context-travelers .view-iestades ul.menu li a:hover,
+.context-podderzhka-dlya-turistov .view-iestades ul.menu li a:hover{
+  background: #ffdd30;
+}
+
+
+.term-listing-heading {
+  margin-left: 60px;
+}
+.page-taxonomy-term h1.title {
+
+}
+.page-taxonomy-term h1.term-title {
+  padding-left: 60px;
+  margin-left: -60px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  line-height: 50px;
+}
+.back-link {
+  background-position: left top;
+  background-repeat: no-repeat;
+  line-height: 50px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  text-indent: -10000px;
+  background-image: url(../img/spa_back.jpg);
+}
+.back-link:hover{
+  background-position: 0 -50px;
+}
+.page-taxonomy-term h1.term-title:hover {
+  background-position: left bottom;
+}
+
+.context-spa h1.term-title,
+.context-spa-0 h1.term-title {
+  background-image: url(../img/spa.jpg);
+  color: #bed730;
+}
+.taxonomy-term-parent-is-35 .back-link,
+.taxonomy-term-parent-is-3 .back-link,
+.taxonomy-term-parent-is-49 .back-link,
+.context-skaistumkopsana-spa .back-link,
+.context-spa .back-link,
+.context-spa-1 .back-link,
+.context-spa-0 .back-link {
+  background-image: url("../img/spa-full.jpg");
+}
+.context-mediciniska-rehabilitacija h1.term-title,
+.context-medicinskaya-reabilitaciya h1.term-title {
+  background-image: url(../img/med.jpg);
+  color: #9dc8bb;
+}
+.taxonomy-term-parent-is-1 .back-link,
+.taxonomy-term-parent-is-47 .back-link,
+.context-mediciniska-rehabilitacija .back-link,
+.taxonomy-term-parent-is-33 .back-link,
+.context-medicinskaya-reabilitaciya .back-link  {
+  background-image: url("../img/med-full.jpg");
+}
+.context-skaistumkopsana-fitness h1.term-title,
+.context-krasota-fitnes h1.term-title {
+  background-image: url(../img/skaistums.jpg);
+  color: #9ac0cf;
+}
+.page-taxonomy-term-34 .back-link,
+.taxonomy-term-parent-is-34 .back-link,
+.taxonomy-term-parent-is-2 .back-link,
+.taxonomy-term-parent-is-46 .back-link,
+.context-sport-fitness .back-link,
+.context-skaistumkopsana-fitness .back-link,
+.context-peldesanas-maciba .back-link,
+.context-sports-fitness .back-link,
+.context-sport-fitnes .back-link {
+  background-image: url("../img/skaistums-full.jpg");
+}
+.context-kirurgija h1.term-title,
+.context-hirurgiya h1.term-title {
+  background-image: url(../img/kirurgija.jpg);
+  color: #de978d;
+}
+.taxonomy-term-parent-is-36 .back-link,
+.taxonomy-term-parent-is-4 .back-link,
+.taxonomy-term-parent-is-42 .back-link,
+.context-surgery .back-link,
+.context-kirurgija .back-link,
+.context-hirurgiya .back-link {
+  background-image: url("../img/kirurgija-full.jpg");
+}
+.context-zobarstnieciba h1.term-title,
+.context-stomatologiya h1.term-title {
+  background-image: url(../img/zobarsti.jpg);
+  color: #faa863;
+}
+.taxonomy-term-parent-is-37 .back-link,
+.taxonomy-term-parent-is-5 .back-link,
+.taxonomy-term-parent-is-43 .back-link,
+.context-stomotology .back-link,
+.context-zobarstnieciba .back-link,
+.context-stomatologiya .back-link {
+  background-image: url("../img/zobarsti-full.jpg");
+}
+.context-ipasie-piedavajumi h1.term-title,
+.context-osobye-predlozheniya h1.term-title {
+  background-image: url(../img/piedavajumi.jpg);
+  color: #ffc543;
+}
+.taxonomy-term-parent-is-38 .back-link,
+.taxonomy-term-parent-is-6 .back-link,
+.taxonomy-term-parent-is-50 .back-link,
+.context-special-offers .back-link,
+.context-ipasie-piedavajumi .back-link,
+.context-osobye-predlozheniya .back-link {
+  background-image: url("../img/piedavajumi-full.jpg");
+}
+.context-atbalsts-celotajam h1.term-title,
+.context-podderzhka-dlya-turistov h1.term-title {
+  background-image: url(../img/atbalsts.jpg);
+  color: #ffdd2e;
+}
+.taxonomy-term-parent-is-39 .back-link,
+.taxonomy-term-parent-is-7 .back-link,
+.taxonomy-term-parent-is-48 .back-link,
+.context-atbalsts-celotajam .back-link,
+.context-travelers .back-link,
+.context-podderzhka-dlya-turistov .back-link {
+  background-image: url("../img/atbalsts-full.jpg");
+}
+
+/* Main menu */
+
+.block-menu-block-1 {
+  z-index: 30;
+  position: absolute;
+  right: 180px;
+  bottom: 10px;
+}
+.block-menu-block-1 ul.menu {
+  padding: 0;
+  margin: 0;
+  z-index: 30;
+}
+.block-menu-block-1 ul.menu li {
+  list-style-image: none;
+  list-style-type: none;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 30;
+
+}
+.block-menu-block-1 ul.menu li a {
+  text-transform: uppercase;
+  padding: 2px 7px;
+  margin: 2px 0;
+  border-right: 1px solid #6ea2b0;
+  line-height: 1em;
+  display: block;
+  color: #438c9c;
+}
+.block-menu-block-1 ul.menu li ul {
+  top: 1.7em;
+  visibility: hidden;
+  background: #ebf5ed;
+  position: absolute;
+}
+.block-menu-block-1 ul.menu li:hover {
+  background: #ebf5ed;
+}
+.block-menu-block-1 ul.menu li:hover ul {
+  visibility: visible;
+}
+.block-menu-block-1 ul.menu li ul li {
+  border-top: 1px dotted #6ea2b0;
+  width: 9.1em;
+}
+.block-menu-block-1 ul.menu li ul li a {
+  border: 0;
+}
+.block-menu-block-1 ul.menu li ul li:hover {
+  background: #bed730;
+}
+
+/* Sidebar menu */
+
+.block-menu-block-2 {
+
+}
+.block-menu-block-2:after,
+.view-iestades:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.block-menu-block-2 ul.menu,
+.block-menu-block-2 h2,
+.view-iestades ul.menu {
+  width: 135px;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+.block-menu-block-2 h2,
+.block-menu-block-2 ul.menu li,
+.view-iestades ul.menu li {
+  list-style-image: none;
+  list-style-type: none;
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px dotted #6ea2b0;
+}
+.block-menu-block-2 ul.menu li.last,
+.view-iestades ul.menu li.last {
+  border: 0;
+}
+.block-menu-block-2 h2 a,
+.block-menu-block-2 ul.menu li a,
+.view-iestades ul.menu li a {
+  text-transform: uppercase;
+  padding: 4px 7px;
+  margin: 0;
+  line-height: 1em;
+  display: block;
+  color: #438c9c;
+}
+.view-iestades ul.menu li a {
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 5px;
+}
+.view-iestades ul.menu li a span {
+  font-weight: normal;
+  text-transform: lowercase;
+  font-size: 10px;
+}
+
+.block-menu-block-2 h2 a:hover,
+.block-menu-block-2 ul.menu li a:hover,
+.block-menu-block-2 ul.menu li a.active {
+  background: #bed730;
+}
+.view-iestades ul.menu li a:hover,
+.view-iestades ul.menu li a.active {
+  background: #9dc8bb;
+}
+.view-iestades .view-empty {
+  width: 140px;
+  float: right;
+}
+
+
+/* languages */
+
+.block-locale-language {
+  float: left;
+  padding: 6px 0 0 0;
+  margin-right: 5px;
+}
+.block-locale-language ul.language-switcher-locale-url,
+.block-locale-language ul.language-switcher-locale-url li.first {
+  margin: 0;
+  padding: 0;
+}
+.block-locale-language ul.language-switcher-locale-url {
+  line-height: 10px;
+  font-size: 10px;
+}
+.block-locale-language ul.language-switcher-locale-url li {
+  list-style-image: none;
+  list-style-type: none;
+  display: inline;
+  margin-left: 5px;
+}
+.block-locale-language ul.language-switcher-locale-url li a img {
+  vertical-align: middle;
+}
+
+/* Search */
+
+.block-search-form {
+  float: left;
+  border: 1px solid #cddddc;
+  padding-left: 15px;
+  background: url(../img/search.png) no-repeat left center;
+  width: 147px;
+  height: 15px;
+  margin-right: 15px;
+  position: relative;
+}
+.search-form {
+
+}
+.block-search-form h2 {
+  display: none;
+}
+.block-search-form .form-item {
+  margin: 0;
+}
+.search-form #edit-basic {
+  width: 500px;
+  position: relative;
+}
+.search-form #edit-basic .form-item {
+  margin-top: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+.block-search-form .form-item label {
+  display: none;
+}
+.block-search-form input.form-text {
+  background: none;
+  border: 0;
+  width: 97px;
+  height: 15px;
+  font-size: 11px;
+  top: 0;
+  left: 15px;
+}
+.search-form .form-item label {
+  width: 150px;
+  display: block;
+  float: left;
+}
+.search-form input.form-text, #views-exposed-form-search-page input.form-text {
+  border: 1px solid #cddddc;
+  padding-left: 15px;
+  background: url(../img/search.png) no-repeat left center;
+  height: 15px;
+  margin-left: 10px;
+  display: block;
+  float: left;
+}
+
+#views-exposed-form-search-page {
+  margin-bottom:15px;
+}
+#views-exposed-form-search-page label {
+  float:left;
+  width:125px;
+}
+
+#views-exposed-form-search-page .views-widget {
+  float:left;
+}
+
+#views-exposed-form-search-page .form-submit {
+  margin:0;
+  margin-top:1px;
+}
+
+#views-exposed-form-search-page input.form-text {
+  width:400px;
+}
+.block-search-form input.form-submit {
+  border-radius: 0;
+  border: 0;
+  background: #cddddc;
+  color: #fff;
+  font-size: 9px;
+  padding: 1px 6px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 13px;
+}
+.search-form input.form-submit, #views-exposed-form-search-page input.form-submit {
+  border-radius: 0;
+  border: 0;
+  background: #cddddc;
+  color: #fff;
+  font-size: 9px;
+  padding: 1px 6px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 13px;
+}
+
+/* Text resize */
+
+#block-block-1 {
+  float: left;
+  margin: 1px 15px 0 0;
+}
+.resizer a {
+  padding: 1px;
+}
+.resizer a.small {
+  font-size: 11px;
+}
+.resizer a.medium {
+  font-size: 14px;
+}
+.resizer a.large {
+  font-size: 15px;
+}
+
+/* Kalendārs */
+
+.view-kalendars.view-display-id-block_1 {
+  width: 155px;
+  margin: 0 auto;
+}
+.view-kalendars.view-display-id-page_4 .views-row {
+  margin-bottom: 20px;
+}
+.view .date-nav-wrapper .date-heading h3 {
+  font-size: 14px;
+  line-height: 13px;
+}
+.calendar-calendar {
+  color: #6ea2b0;
+  font-size: 11px;
+}
+.calendar-calendar tr {
+  background: none;
+}
+.calendar-calendar th.days {
+  background: none;
+  border: 0;
+  color: #6ea2b0;
+}
+.calendar-calendar table.mini td.empty,
+.calendar-calendar td.has-no-events,
+.calendar-calendar td.has-events,
+.calendar-calendar tr td.today,
+.calendar-calendar tr.odd td.today,
+.calendar-calendar tr.even td.today {
+  background: none;
+  text-align: center;
+  padding: 4px 3px;
+  border: 1px solid #c7d9d9;
+}
+.calendar-calendar td.has-events {
+  background: #bed730;
+  color: #fff;
+  font-weight: bold;
+}
+.calendar-calendar td.has-events a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.calendar-calendar tbody {
+  border: 2px solid #c7d9d9;
+}
+.calendar-calendar .mini-day-off {
+  font-weight: bold;
+  color: #6ea2b0;
+}
+.view-kalendars.view-display-id-block_1 .view-header {
+  height: 25px;
+  text-align: center;
+}
+.calendar-current-month {
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: bold;
+}
+.calendar-pager {
+  display: block;
+  width: 8px;
+  height: 15px;
+  text-indent: -10000px;
+  background-image: url(../img/bultas_kal_on.png);
+}
+.calendar-pager.prev {
+  background-position: center top;
+  float: left;
+}
+.calendar-pager.next {
+  background-position: center bottom;
+  float: right;
+}
+.calendar-pager:hover {
+  background-image: url(../img/bultas_kal_on.png);
+}
+
+.node-event .field-type-taxonomy-term-reference .field-item {
+  font-weight: bold;
+}
+
+/* Jaunumi */
+
+.view-jaunumi .views-row {
+  margin-bottom: 20px;
+}
+.view-jaunumi .views-row .views-field-field-image,
+.node-article .field-name-field-image {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+
+/* Jump menu */
+
+#ctools-jump-menu .container-inline div,
+#ctools-jump-menu .container-inline label {
+  display: block;
+}
+#ctools-jump-menu {
+  margin-bottom: 10px;
+  height: 20px;
+}
+.views-exposed-form .views-exposed-widget {
+  float: right;
+  padding: 0;
+}
+
+
+/* Selecbox */
+
+.sbHolder{
+  background-color: #fff;
+  border: solid 1px #cddddc;
+  font-size: 11px;
+  font-weight: normal;
+  height: 18px;
+  position: relative;
+  width: 130px;
+  float: right;
+}
+.sbHolder:focus .sbSelector{
+
+}
+.sbSelector{
+  display: block;
+  height: 18px;
+  left: 0;
+  line-height: 18px;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 4px;
+  font-size: 10px;
+  top: 0;
+  width: 110px;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+  color: #cddddc;
+  outline: none;
+  text-decoration: none;
+}
+.sbToggle{
+  background: #b2d2d1 url(../img/select.png) no-repeat center;
+  display: block;
+  height: 20px;
+  outline: none;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  width: 20px;
+}
+.sbToggle:hover{
+  background: url(../img/select.png) no-repeat;
+}
+.sbToggleOpen{
+  background: url(../img/select.png) no-repeat;
+}
+.sbToggleOpen:hover{
+  background: url(../img/select.png) no-repeat;
+}
+.sbHolderDisabled{
+  background-color: #f2f2f2;
+  border: solid 1px #cddddc;
+}
+.sbHolderDisabled .sbHolder{
+
+}
+.sbHolderDisabled .sbToggle{
+
+}
+.sbOptions{
+  background-color: #fff;
+  border: solid 1px #cddddc;
+  list-style: none;
+  left: -1px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  width: 130px;
+  z-index: 1;
+  overflow-y: auto;
+}
+.sbOptions li{
+  padding: 0 1px;
+}
+.sbOptions a{
+  border-bottom: dotted 1px #515151;
+  display: block;
+  outline: none;
+  padding: 5px 0 5px 3px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+  color: #2E2E2E;
+  text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+  color: #EBB52D;
+}
+.sbOptions li.last a{
+  border-bottom: none;
+}
+.sbOptions .sbDisabled{
+  border-bottom: dotted 1px #515151;
+  color: #999;
+  display: block;
+  padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+  border-bottom: dotted 1px #515151;
+  color: #EBB52D;
+  display: block;
+  font-weight: bold;
+  padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+  padding-left: 17px;
+}
+
+div.selector {
+  background: #cddddc url(../img/select.png) no-repeat 125px center;
+  border: solid 1px #cddddc;
+  width: 140px;
+  height: 20px;
+  font-size: 11px;
+  padding: 0;
+  color: #cddddc;
+  cursor: pointer;
+}
+div.selector:hover,
+div.selector.focus {
+  background-position: 125px center;
+}
+div.selector span {
+  margin-right: 20px;
+  padding: 0 0 0 5px;
+  background: #fff;
+  height: 20px;
+  line-height: 20px;
+  width: 115px;
+  color: #cddddc;
+  cursor: pointer;
+}
+
+
+/* Kontakti */
+
+.webform-client-form {
+  width: 430px;
+}
+.webform-client-form label {
+  float: left;
+  width: 120px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.webform-client-form .form-text,
+.webform-client-form textarea {
+  width: 298px;
+  border: 1px solid #C7D9D9;
+  background: none;
+  border-radius: 0;
+  padding: 2px 0;
+}
+.webform-client-form .grippie {
+  display: none;
+}
+.webform-client-form .form-submit {
+  background: #C7D9D9;
+  border: 0;
+  color: #fff;
+  padding: 0 10px;
+  float: right;
+}
+
+/* Print */
+
+div#block-print-ui-print-links span {
+  text-align: right;
+}
+
+/* Newsletter */
+
+.block-simplenews {
+  padding: 10px;
+}
+.block-simplenews .form-submit {
+  background: #C7D9D9;
+  border: 0;
+  color: #fff;
+  padding: 0 5px;
+  margin-right: 3px;
+  margin-top: 2px;
+}
+
+.print_html .print-page img{
+  display: none;
+}
+.print_html .print-page{
+  display: block;
+  width: 22px;
+  height: 25px;
+  float: right;
+  background: url(../img/print.jpg) no-repeat center center;
+}
+
+.print_html .print-page:hover{
+  background: url(../img/print-hover.jpg) no-repeat center center;
+}
+
+#block-simplenews-749 #edit-mail{
+  background-color:#ebf5ed;
+  border:1px solid #c6dedb;
+  margin-top: 3px;
+}
+
+#block-simplenews-749 .form-required{
+  display: none
+}
+
+#block-simplenews-749 h2{
+  font-size: 14px
+}
+
+#block-simplenews-749 .content{
+  margin-top:8px;
+}
+
+#block-webform-client-block-139 h2{
+  font-size: 14px
+}
+
+#block-block-4 .content{
+  display: none;
+}
+
+#block-block-4{
+  background: url('../img/GreenLandOfHealth2.png') no-repeat top right;
+  height: 65px;
+  width: 261px;
+  position: absolute;
+  left: 18px;
+  bottom: 6px;
+}
+
+#region-branding {
+  position: absolute;
+  margin: 0;
+  right: 45px;
+  bottom: 12px;
+  width: auto;
+
+}
+
+#block-system-main .col1 .views-row, #block-system-main .col2 .views-row{
+  float: none;
+}
+
+#block-system-main .col1, #block-system-main .col2{
+  width: 50%;
+  float: left;
+}
+
+#block-views-iestades-block .views-row a{
+  line-height: 1.2em
+}
+
+.back-link
+{
+  display: none;
+}
+
+.taxonomy-vocabulary-pakalpojumi .back-link
+{
+  display: block;
+  margin:20px 0 0 15px;
+}
+
+.taxonomy-vocabulary-pakalpojumi #page-title
+{
+  margin-left: 60px;
+}
+
+.webform-client-form input.error
+{
+  border-width: 1px;
+}
+
+sup, sub
+{
+  font-size: smaller;
+}
+
+sup
+{
+  vertical-align: super;
+}
+
+sub
+{
+  vertical-align: sub;
+}
+
+.vocabulary-pakalpojumi .field-name-title{
+  display:none;
+}

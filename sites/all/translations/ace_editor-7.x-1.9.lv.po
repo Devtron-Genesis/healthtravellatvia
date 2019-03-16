@@ -1,0 +1,26 @@
+# Latvian translation of Ace Code Editor (7.x-1.9)
+# Copyright (c) 2017 by the Latvian translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ace Code Editor (7.x-1.9)\n"
+"POT-Creation-Date: 2017-07-18 20:45+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Latvian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):((n!=0)?(1):2));\n"
+
+msgid "Administration"
+msgstr "Administrēšana"
+msgid "Theme"
+msgstr "Tēma"
+msgid "Width"
+msgstr "Platums"
+msgid "Height"
+msgstr "Augstums"
+msgid "Font size"
+msgstr "Fonta izmērs"
+msgid "Text formats"
+msgstr "Teksta formāti"

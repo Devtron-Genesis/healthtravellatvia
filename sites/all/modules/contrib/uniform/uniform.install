@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Uniform module.
+ */
+
+function uniform_install() {
+  variable_set('uniform_theme', 'default');
+  drupal_set_message($message = 'Uniform is now enabled, now go to the <a href="/admin/config/user-interface/uniform">Uniform settings page</a> and configure which form elements get themed.', $type = 'status');
+}
+
+function uniform_uninstall() {
+  db_query("DELETE FROM {variable} WHERE name LIKE 'uniform_%'");
+}
