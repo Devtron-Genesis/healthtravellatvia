@@ -18,6 +18,8 @@ stylesheets[print][] = css/swipebox.css
 scripts[] = js/bootstrap.min.js
 scripts[] = js/scripts.js
 scripts[] = js/jquery.swipebox.min.js
+scripts[] = js/jquery.lazy.plugins.min.js
+scripts[] = js/jquery.lazy.min.js
 
 ; Regions
 regions[content] = content
