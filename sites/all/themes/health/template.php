@@ -49,7 +49,6 @@ function health_preprocess_html(&$vars) {
 	drupal_add_html_head($viewport, 'viewport');
 
 	drupal_add_html_head($apple_mobile_web_app_capable, 'apple-mobile-web-app-capable');
-  drupal_add_html_head($google_tag_manager, 'apple-mobile');
 
 
 
@@ -566,7 +565,3 @@ function load_second_level_menu($sub_link,$extra_class = '') {
     $html .= '</ul>';
     return $html;
     }
-function hook_html_head_alter(&$vars) {
-  
-      $vars['header_tag'] = "hellow WorLd"; 
-  }

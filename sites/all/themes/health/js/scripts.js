@@ -1448,6 +1448,51 @@ $(window).load(function(){
         $('.i18n-lv .new_clinics_services h2').text('KLĪNIKAS PAKALPOJUMI');
         $('.i18n-ru .new_clinics_services h2').text('УСЛУГИ КЛИНИКИ');
 
+
+        // to change the content of popup for different screens 
+        var w = $(window).width();
+        if(w > 1025) {
+            $('.footer').prepend('<div id="popup_this" class="popup_content_main"><span class="button b-close"><span>X</span></span><a href="contact-form"><img alt="" height="600" src="/sites/lka/files/gloh_popup-new_600x360px-1.png" width="1000" /></a></div>');
+
+        }
+         else if(w > 480 && w < 1024) {
+            $('.footer').prepend('<div id="popup_this" class="popup_content_main popup_for_tablet"><span class="button b-close"><span>X</span></span><a href="contact-form"><img alt="" src="/sites/lka/files/gloh_popup-new_600x360px-1.png" /></a></div>');
+        }
+        
+         else if(w > 320 && w < 480) {
+            $('.footer').prepend('<div id="popup_this" class="popup_content_main popup_for_mobile"><span class="button b-close"><span>X</span></span><a href="contact-form"><img alt="" src="/sites/lka/files/gloh_popup-new_260x500px-1.png" /></a></div>');
+
+        }
+       
+         // Popup 
+        function show_popup(){
+            $('.page-taxonomy-term-1308 #popup_this').bPopup();
+            $('.page-taxonomy-term-37 #popup_this').bPopup();
+            $('.page-taxonomy-term-1299 #popup_this').bPopup();
+            $('.page-taxonomy-term-1313 #popup_this').bPopup();
+            $('.page-taxonomy-term-36 #popup_this').bPopup();
+            $('.page-taxonomy-term-1305 #popup_this').bPopup();
+            $('.page-taxonomy-term-1302 #popup_this').bPopup();
+            $('.page-node-700 #popup_this').bPopup();
+
+        };
+        window.setTimeout( show_popup, 30000 ); // 30 seconds
+
+        // for new contact form select list
+         $('form#webform-client-form-701 select#edit-submitted-services option').each(function(){
+            // $(this).first().attr('value', '19921');
+            var options = $(this).val();
+            if((options==19921)||(options==1496)||(options==1309)||(options==1307)||(options==1303)||(options==37)||(options==1300)||(options==1302)||(options==1304)||(options==1305)||(options==834)||(options==1306)
+                ||(options==1313)||(options==1494)||(options==1310)||(options==1311)||(options==1419)||(options==36)||(options==1312)||(options==33)||(options==1315)||(options==35)||(options==1314)||(options==1308)||(options==1299)
+             ){ // EDITED THIS LINE
+                $(this).show();
+            }
+            else {
+                $(this).remove();
+            }
+        });
+         $('form#webform-client-form-701 select#edit-submitted-services').prepend('<option selected="selected">CHOOSE MEDICAL SERVICE</option>');
+
   });
 
 
