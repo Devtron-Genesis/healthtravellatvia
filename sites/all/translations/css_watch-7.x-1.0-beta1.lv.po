@@ -1,0 +1,16 @@
+# Latvian translation of CSS Watch (7.x-1.0-beta1)
+# Copyright (c) 2011 by the Latvian translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CSS Watch (7.x-1.0-beta1)\n"
+"POT-Creation-Date: 2011-02-24 04:07+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Latvian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):((n!=0)?(1):2));\n"
+
+msgid "Development"
+msgstr "Izstrāde"

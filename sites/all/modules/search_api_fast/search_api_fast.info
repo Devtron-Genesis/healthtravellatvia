@@ -1,0 +1,12 @@
+name = Search API Fast
+description = "Use drush to index multi-processed (fast)"
+dependencies[] = search_api
+
+files[] = includes/SearchApiFastSearchQueue.inc
+
+; Information added by Drupal.org packaging script on 2017-05-30
+version = "7.x-1.4"
+core = "7.x"
+project = "search_api_fast"
+datestamp = "1496142545"
+

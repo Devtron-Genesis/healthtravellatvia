@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * The search_api_fast module file.
+ *
+ * Index search_api by using many workers simultaneously.
+ */
+
+// Workers for indexing queues.
+// Each worker is actually a seperate drush process.
+define('SEARCH_API_FAST_INDEX_WORKERS', variable_get('search_api_fast_index_workers', 8));
+
+// Batches to be handled by each worker before it's respawned.
+// If chaning this, you should take memory consumption into account.
+define('SEARCH_API_FAST_MAX_BATCHES_WORKER_RESPAWN', variable_get('search_api_fast_max_batches_worker_respawn', 4));
+
+// Batch size (items to index).
+// Each worker handles batches from it's own queue.
+define('SEARCH_API_FAST_WORKER_BATCH_SIZE', variable_get('search_api_fast_worker_batch_size', 100));
+
+/**
+ * Implements hook_module_implements_alter().
+ *
+ * Make sure that other modules could catch watchdog messages,
+ * because search_api_fast_watchdog() kills te process (die).
+ */
+function search_api_fast_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'watchdog') {
+    // Move my_module_rdf_mapping() to the end of the list. module_implements()
+    // iterates through $implementations with a foreach loop which PHP iterates
+    // in the order that the items were added, so to move an item to the end of
+    // the array, we remove it and then add it.
+    $group = $implementations['search_api_fast'];
+    unset($implementations['search_api_fast']);
+    $implementations['search_api_fast'] = $group;
+  }
+}
+
+/**
+ * Implements hook_watchdog().
+ *
+ * Print the message and die.
+ * This prevents search_api from falling into a loop:
+ *   - solr cannot spawn index workers because of OOM
+ *   - search_api writes failed taks to search_api_task table
+ *   - search_api retries the task at next loop cycle during indexing
+ *   - fail fail fail fail.......
+ */
+function search_api_fast_watchdog(array $log_entry) {
+  if (strpos($log_entry['type'], 'search_api') !== FALSE && search_api_fast_active()) {
+    drush_print(dt($log_entry['message'], $log_entry['variables']));
+    die();
+  }
+}
+
+/**
+ * See (or set) if search_api_fast was initiated.
+ *
+ * Used by hook_watchdog to let code die or not in case of errors.
+ *
+ * @param bool|null $state
+ *   Set state to TRUE or provide NULL to only get the current state.
+ *
+ * @return bool
+ *   Current state.
+ */
+function search_api_fast_active($state = NULL) {
+  static $current_state = FALSE;
+  if (!is_null($state)) {
+    $current_state = $state;
+  }
+  return $current_state;
+}

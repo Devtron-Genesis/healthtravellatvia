@@ -1,0 +1,192 @@
+[27-Mar-2019 16:36:51 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:52 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:53 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:53 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:53 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:54 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:54 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:54 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:54 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:55 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:55 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:55 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:36:56 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:37:03 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:37:04 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762
+[27-Mar-2019 16:37:10 Europe/Riga] PHP Fatal error:  Uncaught Error: Call to undefined function cache_get() in /home3/healthtr/public_html/includes/module.inc:762
+Stack trace:
+#0 /home3/healthtr/public_html/includes/module.inc(962): module_implements('system_theme_in...')
+#1 /home3/healthtr/public_html/modules/system/system.module(2511): module_invoke_all('system_theme_in...')
+#2 /home3/healthtr/public_html/includes/theme.inc(798): _system_rebuild_theme_data()
+#3 /home3/healthtr/public_html/includes/theme.maintenance.inc(57): list_themes()
+#4 /home3/healthtr/public_html/includes/bootstrap.inc(2894): _drupal_maintenance_theme()
+#5 /home3/healthtr/public_html/includes/errors.inc(179): drupal_maintenance_theme()
+#6 /home3/healthtr/public_html/includes/bootstrap.inc(2622): _drupal_log_error(Array, true)
+#7 [internal function]: _drupal_exception_handler(Object(Error))
+#8 {main}
+  thrown in /home3/healthtr/public_html/includes/module.inc on line 762

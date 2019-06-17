@@ -70,8 +70,8 @@ class purl_querystring implements purl_processor {
   function remove($value, $element) {
     $qs = array();
     parse_str($value, $qs);
-    unset($qs[$element->value]);
-    return drupal_http_build_query($qs);
+    unset($qs[$element->id]);
+    return drupal_query_string_encode($qs);
   }
 
   /**
@@ -79,7 +79,10 @@ class purl_querystring implements purl_processor {
    */
   public function rewrite(&$path, &$options, $element) {
     if (!_purl_skip($element, $options)) {
-      $options['query'][$element->value] = $element->id;
+      $qs = array();
+      parse_str($options['query'], $qs);
+      $qs[$element->value] = $element->id;
+      $options['query'] = drupal_query_string_encode($qs);
     }
   }
 }
