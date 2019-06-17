@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Module install file for context asset manager.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function context_asset_manager_install() {
+  db_query("ALTER TABLE {context} CHANGE COLUMN `reactions` `reactions` MEDIUMTEXT NULL DEFAULT NULL COMMENT 'Serialized storage of all context reaction settings.'");
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function context_asset_manager_uninstall() {
+  // Delete variables.
+  global $conf;
+  db_delete('variable')
+    ->condition('name', 'context_asset_manager_%', 'LIKE')
+    ->execute();
+  cache_clear_all('variables', 'cache_bootstrap');
+  unset($conf[$name]);
+}
