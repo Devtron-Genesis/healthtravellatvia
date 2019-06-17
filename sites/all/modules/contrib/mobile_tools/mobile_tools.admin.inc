@@ -347,31 +347,35 @@ function mobile_tools_device_group_form_submit($form, &$form_state) {
   $device_group->weight = intval($form_state['values']['weight']);
 
   // Only save a value if a detection method was selected
-  if ($form_state['values']['detector'] != 'none') {
-    $device_group->detector = $form_state['values']['detector'];
-    // Grab the detection methods' settings fields and add them to our serialized
-    // field for db storage.
-    $device_group->detection_settings[$device_group->detector]['activation callback'] = $form[$device_group->detector]['#activation callback'];
-    if (isset($form[$device_group->detector]['#fields']) ) {
-      foreach ($form[$device_group->detector]['#fields'] as $field) {
-        $device_group->detection_settings[$device_group->detector][$field] = $form_state['values'][$field];
-      }
-    }
+  if (isset($form_state['values']['detector'])) {
+	if ($form_state['values']['detector'] != 'none') {
+	  $device_group->detector = $form_state['values']['detector'];
+	  // Grab the detection methods' settings fields and add them to our serialized
+	  // field for db storage.
+	  $device_group->detection_settings[$device_group->detector]['activation callback'] = $form[$device_group->detector]['#activation callback'];
+	  if (isset($form[$device_group->detector]['#fields']) ) {
+	    foreach ($form[$device_group->detector]['#fields'] as $field) {
+			$device_group->detection_settings[$device_group->detector][$field] = $form_state['values'][$field];
+		}
+	  }
+	}
+	else {
+	  // Clear out the detection settings
+	  $device_group->detector = '';
+	  $device_group->detection_settings = '';
+	}
   }
-  else {
-    // Clear out the detection settings
-    $device_group->detector = '';
-    $device_group->detection_settings = '';
-  }
-
-
   // Parse the httpheaders field into an array to be stored
   $headers = array();
   foreach (explode("\r\n", $form_state['values']['httpheaders']) as $header) {
     if (!empty($header)) {
       // Split the line only by non-escaped colon
       $split_header = preg_split('/(?<!\\\):/', $header);
-      $headers[$split_header[0]] = $split_header[1];
+        if(isset($split_header[1])){
+          $headers[$split_header[0]] = $split_header[1];
+        } else {
+           form_set_error($form_state['values']['httpheaders'], t('Please enter a valid HTTP Headers'));
+        }
     }
   }
   $device_group->httpheaders = $headers;

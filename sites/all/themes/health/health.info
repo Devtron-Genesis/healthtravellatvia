@@ -11,13 +11,13 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/bootstrap.min.css
 stylesheets[print][] = css/print.css
-stylesheets[print][] = css/swipebox.css
 
 ; Scripts
 ;scripts[] = js/jquery.min.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/scripts.js
-scripts[] = js/jquery.swipebox.min.js
+scripts[] = js/jquery.bpopup.min.js
+scripts[] = js/wow.min.js
 
 ; Regions
 regions[content] = content

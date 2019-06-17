@@ -1367,17 +1367,17 @@ $(window).load(function(){
 
          var width = $(window).width();
 
-        	if (width < 340) {
-            	var scale = width / 328;
-            	$('.g-recaptcha').css('transform', 'scale(' + scale + ')');
-            	$('.g-recaptcha').css('-webkit-transform', 'scale(' + scale + ')');
-            	$('.g-recaptcha').css('transform-origin', '0 0');
-            	$('.g-recaptcha').css('-webkit-transform-origin', '0 0');
+            if (width < 340) {
+                var scale = width / 328;
+                $('.g-recaptcha').css('transform', 'scale(' + scale + ')');
+                $('.g-recaptcha').css('-webkit-transform', 'scale(' + scale + ')');
+                $('.g-recaptcha').css('transform-origin', '0 0');
+                $('.g-recaptcha').css('-webkit-transform-origin', '0 0');
 
                 var frontp_recptcha = scale - 0.033;
                 $('.front .g-recaptcha').css('transform', 'scale(' + frontp_recptcha + ')');
                 $('.front .g-recaptcha').css('-webkit-transform', 'scale(' + frontp_recptcha + ')');
-        	} 
+            } 
            else if (width < 400) {
                 var scale = width / 325;
                 $('.g-recaptcha').css('transform', 'scale(' + scale + ')');
@@ -1447,6 +1447,117 @@ $(window).load(function(){
         $('.contact_form_mob_view .right-slider').prepend(item_list);
         $('.i18n-lv .new_clinics_services h2').text('KLĪNIKAS PAKALPOJUMI');
         $('.i18n-ru .new_clinics_services h2').text('УСЛУГИ КЛИНИКИ');
+
+
+        // window.setTimeout( show_popup, 5000 ); // 5 seconds
+
+        // for new contact form select list
+        // English
+         $('form#webform-client-form-701 select#edit-submitted-services option').each(function(){
+            // $(this).first().attr('value', '19921');
+            var options = $(this).val();
+            if((options==19921)||(options==1496)||(options==1309)||(options==1307)||(options==1303)||(options==37)||(options==1300)||(options==1302)||(options==1304)||(options==1305)||(options==834)||(options==1306)
+                ||(options==1313)||(options==1494)||(options==1310)||(options==1311)||(options==1419)||(options==36)||(options==1312)||(options==33)||(options==1315)||(options==35)||(options==1314)||(options==1308)||(options==1299)
+             ){ // EDITED THIS LINE
+                $(this).show();
+            }
+            else {
+                $(this).remove();
+            }
+        });
+         // for new contact form select list 
+         // Latvian
+         $('form#webform-client-form-704 select#edit-submitted-services option').each(function(){
+            // $(this).first().attr('value', '19921');
+            var options = $(this).val();
+            if((options==19921)||(options==1496)||(options==1309)||(options==1307)||(options==1303)||(options==37)||(options==1300)||(options==1302)||(options==1304)||(options==1305)||(options==834)||(options==1306)
+                ||(options==1313)||(options==1494)||(options==1310)||(options==1311)||(options==1419)||(options==36)||(options==1312)||(options==33)||(options==1315)||(options==35)||(options==1314)||(options==1308)||(options==1299)
+             ){ // EDITED THIS LINE
+                $(this).show();
+            }
+            else {
+                $(this).remove();
+            }
+        });
+         // for new contact form select list
+         // Russian
+         $('form#webform-client-form-705 select#edit-submitted-services option').each(function(){
+            // $(this).first().attr('value', '19921');
+            var options = $(this).val();
+            if((options==19921)||(options==1496)||(options==1309)||(options==1307)||(options==1303)||(options==37)||(options==1300)||(options==1302)||(options==1304)||(options==1305)||(options==834)||(options==1306)
+                ||(options==1313)||(options==1494)||(options==1310)||(options==1311)||(options==1419)||(options==36)||(options==1312)||(options==33)||(options==1315)||(options==35)||(options==1314)||(options==1308)||(options==1299)
+             ){ // EDITED THIS LINE
+                $(this).show();
+            }
+            else {
+                $(this).remove();
+            }
+        });
+         $('form#webform-client-form-701 select#edit-submitted-services').prepend('<option selected="selected">CHOOSE MEDICAL SERVICE</option>');
+
+
+         // add new class to the srevices pages price table parent div
+        if ($('body').hasClass('page-taxonomy-term-1307')) {
+            $('.vocabulary-pakalpojumi #block-views-pakalpojumi-block-1 .views-row-odd table:first').parent().addClass('service_price_list_tabel');
+
+        } else if ($('body').hasClass('page-taxonomy-term-37')) {
+            $('.vocabulary-pakalpojumi #block-views-pakalpojumi-block-1 .views-row-even table:first').parent().addClass('service_price_list_tabelOne');
+
+        } else if ($('body').hasClass('page-taxonomy-term-1313')) {
+            $('.vocabulary-pakalpojumi #block-views-pakalpojumi-block-1 .views-row-even table:first').wrap("<div class='service_price_list_tabel' />");
+
+        } else {
+            $('.vocabulary-pakalpojumi #block-views-pakalpojumi-block-1 table:first').parent().addClass('service_price_list_tabel');
+
+        }
+
+        // Server pages show service related clinics
+        $('.view-related-clinics .item-list li').addClass('col-md-6');
+        $('.view-related-clinics .views-field-field-bilde .field-content').addClass('server_clicnic_fields');
+        $('#block-views-related-clinics-block .view-related-clinics .item-list li .service_clinic_img img').not(':first-child').hide();// hide all the images except first one.
+
+         // To check the string if the text is exist in string do somthing
+        var str1 = $('.service_clinic_flags').text();
+        var languagesSet = $('.service_clinic_flags');
+       
+        var langLv = "Latvian";
+        var langEn = "English";
+        var langRu = "Russian"; 
+        var langfr = "French";
+        var langGe = "German";
+
+        $('.services_clinic_address_flag').each(function(){
+
+
+            if ($(this).find('.service_clinic_flags:contains("Latvian")').length > 0)
+            {
+                $(this).find('.service_clinic_flags').append('<img src="/sites/all/themes/health/img/flags/lv.png">');
+            } 
+            if ($(this).find('.service_clinic_flags:contains("English")').length > 0)
+            {
+                $(this).find('.service_clinic_flags').append('<img src="/sites/all/themes/health/img/flags/en.png">');
+            } 
+            if ($(this).find('.service_clinic_flags:contains("Russian")').length > 0)
+            {
+                $(this).find('.service_clinic_flags').append('<img src="/sites/all/themes/health/img/flags/ru.png">');
+            } 
+            if ($(this).find('.service_clinic_flags:contains("French")').length > 0)
+            {
+                $(this).find('.service_clinic_flags').append('<img src="/sites/all/themes/health/img/flags/fr.png">');
+            } 
+            if ($(this).find('.service_clinic_flags:contains("German")').length > 0)
+            {
+                $(this).find('.service_clinic_flags').append('<img src="/sites/all/themes/health/img/flags/ge.png">');
+            } 
+
+                var t = $(this).find('service_clinic_flags').text();
+                t = t.replace(/\*$/, '');
+                $(this).find('service_clinic_flags').text(t);
+         
+
+        });
+
+
 
   });
 

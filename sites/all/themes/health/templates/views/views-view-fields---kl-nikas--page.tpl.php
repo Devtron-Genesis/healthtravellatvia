@@ -32,7 +32,6 @@
 		$alias = drupal_get_path_alias('node/'.$nid.'');
 		$node_language = $row->node_language;
 		$www = $row->field_field_www[0]['raw']['value'];
-		$pakalpojumi = $row->field_pakalpojumi[0]['raw']['value'];
 		if(!strpos($www, 'http')){
 			$www = "http://".trim($www);
 		}
@@ -62,12 +61,11 @@
 		    <img src="<?php print base_path().drupal_get_path('theme', 'health'); ?>/img/flags/<?php echo $value['raw']['value']; ?>.png" class="img-responsive clinics-flags">
 		    <?php } ?>
 		</div>
-			<?php echo 	$pakalpojumi; ?>
+
 	</div>
 	
 	<a style="float: right;" href="<?php print base_path().$node_language.'/'.$alias; ?>"><?php echo t('Read More'); ?></a>
-	<a style="float: left;" target="_blank" href="<?php echo $www; ?>"><?php echo $www; ?></a>
-	
+	<a style="float: left;" target="_blank" href="<?php echo $www; ?>"><?php echo $www; ?></a>	
 	</div>
 </div>
 	

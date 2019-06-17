@@ -1,0 +1,282 @@
+<?php
+/**
+ * @file
+ * Defer Image Module.
+ */
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Adds a configuration page.
+ */
+function defer_image_menu() {
+  $items = array();
+  $items['admin/config/media/defer-image'] = array(
+    'title' => 'Defer Image Settings',
+    'description' => 'Configuration for the Defer Image module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('defer_image_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'defer_image.admin.inc',
+  );
+  return $items;
+}
+
+
+/**
+ * Implements hook_preprocess_hook().
+ *
+ * Adds config settings to Drupal.settings for use in JS.
+ */
+function defer_image_preprocess_page(&$variables) {
+  drupal_add_js(array(
+    'deferImage' => array(
+      'deferClass' => variable_get('defer_image_class', 'defer-image-load'),
+      'deferTiming' => variable_get('defer_image_timing', 'load'),
+    )
+  ), 'setting');
+}
+
+
+/**
+ * Implements hook_theme().
+ *
+ * Specifies the theme functions to use.
+ */
+function defer_image_theme() {
+  return array(
+    'defer_image' => array(
+      'variables' => array(
+        'item' => NULL,
+        'path' => NULL,
+        'image_style' => NULL
+      ),
+      'file' => 'defer_image.theme.inc',
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_field_formatter_info().
+ *
+ * Initializes a new field formatter for images.
+ */
+function defer_image_field_formatter_info() {
+  return array(
+    'defer_image_load' => array(
+      'label' => t('Defer Image Load'),
+      'field types' => array('image'),
+      'settings' => array('image_style' => '', 'image_link' => ''),
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ *
+ * Adds settings for field formatter.
+ */
+function defer_image_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $element = array();
+
+  if ($display['type'] == 'defer_image_load') {
+    $image_styles = image_style_options(FALSE);
+    $element['image_style'] = array(
+      '#title' => t('Image style'),
+      '#type' => 'select',
+      '#default_value' => $settings['image_style'],
+      '#empty_option' => t('None (original image)'),
+      '#options' => $image_styles,
+    );
+  }
+
+  return $element;
+}
+
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ *
+ * Provdies a summary for the field formatter settings.
+ */
+function defer_image_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $summary = array();
+
+  if ($display['type'] == 'defer_image_load') {
+    $image_styles = image_style_options(FALSE);
+    // Unset possible 'No defined styles' option.
+    unset($image_styles['']);
+    // Styles could be lost because of enabled/disabled modules that defines
+    // their styles in code.
+    if (isset($image_styles[$settings['image_style']])) {
+      $summary[] = t('Image style: @style', array('@style' => $image_styles[$settings['image_style']]));
+    }
+    else {
+      $summary[] = t('Original image');
+    }
+  }
+
+  return implode('<br />', $summary);
+}
+
+
+/**
+ * Implements hook_field_formatter_view().
+ *
+ * Determines how to render the image.
+ */
+function defer_image_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  // Check if the formatter involves a link.
+  $image_link = $display['settings']['image_link'];
+  if ($image_link == 'content') {
+    $uri = entity_uri($entity_type, $entity);
+  }
+  elseif ($image_link == 'file') {
+    $link_file = TRUE;
+  }
+  elseif ($image_link) {
+    if (isset($entity->$image_link)) {
+      // Support for field translations.
+      $link_values = field_get_items($entity_type, $entity, $image_link);
+    }
+  }
+
+  if ($display['type'] == 'defer_image_load') {
+    foreach ($items as $delta => $item) {
+      if (isset($link_file)) {
+        $uri = array(
+          'path' => file_create_url($item['uri']),
+          'options' => array(),
+        );
+      }
+      // Handle multiple link with image values.
+      if (!empty($link_values)) {
+        if (isset($link_values[$delta]['url'])) {
+          $uri = array(
+            'path' => $link_values[$delta]['url'],
+            'options' => array('attributes' => $link_values[$delta]['attributes']),
+          );
+          // Handle query if there is any.
+          if (!empty($link_values[$delta]['query'])) {
+            $uri['options']['query'] = $link_values[$delta]['query'];
+          }
+          // Handle fragment if there is any.
+          if (!empty($link_values[$delta]['fragment'])) {
+            $uri['options']['fragment'] = $link_values[$delta]['fragment'];
+          }
+        }
+        // If there are more image values than link values unset the link.
+        else {
+          unset($uri);
+        }
+      }
+      $element[$delta] = array(
+        '#theme' => 'defer_image',
+        '#item' => $item,
+        '#image_style' => $display['settings']['image_style'],
+        '#path' => (isset($uri)) ? $uri : '',
+      );
+    }
+  }
+
+  return $element;
+}
+
+
+/**
+ * Implements hook_filter_info().
+ *
+ * Defines a text filter that replaces certain image tags with their defer img
+ * equivalent markup.
+ */
+function defer_image_filter_info() {
+  $class = variable_get('defer_image_class', 'defer-image-load');
+  $filters['defer_image'] = array(
+    'title' => t('Defer images with class !class', array(
+      '!class' => filter_xss_admin($class),
+    )),
+    'description' => t('Replaces inline img tags with class %class with the defer image equivalent markup.', array(
+      '%class' => $class,
+    )),
+    'process callback' => '_defer_image_find_and_replace',
+  );
+
+  return $filters;
+}
+
+/**
+ * Rewrites text so that images that are directly written within markup (that're
+ * also intended to be deferred until after the window load event) are rewritten
+ * to do so.
+ */
+function _defer_image_find_and_replace($text, $filter, $format, $langcode, $cache, $cache_id) {
+  // Define the regex pattern: matches any single img tag that contains a class
+  // as defined in the module settings.
+  $class = variable_get('defer_image_class', 'defer-image-load');
+  $pattern = "/<img[^>]*src=[\"'](.*?)[\"'][^>]*class=[\"']([a-zA-Z-_\s]*{$class}[a-zA-Z-_\s]*)[\"'][^>]*\/?>/mi";
+
+  // Find all instances of these img tags.
+  if (preg_match_all($pattern, $text, $matches)) {
+    // If there are any, iterate over each one.
+    foreach ($matches[0] as $match => $imgTag) {
+      // Remove the defer image class; it's meaningless on the img tag itself.
+      $imgTag = str_replace($class, '', $imgTag);
+
+      // Prepare the $variables array for theme_defer_image().
+      $deferVars = array(
+        'item' => array(
+          'uri' => $matches[1][$match],
+        ),
+        'image_style' => FALSE,
+        'path' => array(),
+      );
+
+      // Find all html attributes on this img tag.
+      if (preg_match_all("/([a-zA-Z-_]*)=['\"](.*?)['\"]/i", $imgTag, $attrs)) {
+        // Apply all known attributes (except src) to the item.
+        foreach ($attrs[1] as $attr => $name) {
+          // Populate the $variables array with image attributes.
+          if ($name !== 'src') {
+            $deferVars['item'][$name] = $attrs[2][$attr];
+          }
+        }
+      }
+
+      // Generate the deferred image markup and replace it in the main markup.
+      $deferMarkup = theme('defer_image', $deferVars);
+      $text = str_replace($matches[0][$match], $deferMarkup, $text);
+    }
+  }
+
+  return $text;
+}
+
+
+/**
+ * Returns a URI for an image with applied style.
+ *
+ * @param $item
+ *   The field item.
+ *
+ * @param $default
+ *   The image style for the default state.
+ *
+ * @return
+ *   HTML uri output for the field.
+ */
+function _defer_image_render_image_style_uri($item, $default) {
+  // Get the image uri using the configured styles.
+  $uri = (!empty($default)) ? image_style_path($default, $item['uri']) : $item['uri'];
+
+  return $uri;
+}

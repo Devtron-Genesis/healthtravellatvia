@@ -7,9 +7,9 @@ dependencies[] = mobile_tools
 dependencies[] = browscap
 
 files[] = mobile_tools_browscap.test
-; Information added by drupal.org packaging script on 2012-08-08
+; Information added by Drupal.org packaging script on 2014-03-21
 version = "7.x-3.x-dev"
 core = "7.x"
 project = "mobile_tools"
-datestamp = "1344386061"
+datestamp = "1395401357"
 

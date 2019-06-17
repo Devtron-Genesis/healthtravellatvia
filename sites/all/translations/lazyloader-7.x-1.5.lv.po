@@ -1,0 +1,28 @@
+# Latvian translation of Image Lazyloader (7.x-1.5)
+# Copyright (c) 2018 by the Latvian translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Image Lazyloader (7.x-1.5)\n"
+"POT-Creation-Date: 2018-10-16 18:49+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Latvian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):((n!=0)?(1):2));\n"
+
+msgid "Pages"
+msgstr "Lapas"
+msgid "Enabled"
+msgstr "Iespējots"
+msgid "Reset"
+msgstr "Attīrīt"
+msgid "None"
+msgstr "Nav"
+msgid "Configure"
+msgstr "Konfigurēt"
+msgid "All pages except those listed"
+msgstr "Visas lapas izņemot norādītās"
+msgid "Only the listed pages"
+msgstr "Tikai norādītajās lapās"
