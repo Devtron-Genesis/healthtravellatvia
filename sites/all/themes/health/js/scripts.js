@@ -1301,10 +1301,28 @@ $(window).load(function(){
 });
 
 
-
+        function youTubes_makeDynamic() {
+            var $ytIframes = $('iframe[src*="youtube.com"]');
+            $ytIframes.each(function (i,e) {
+                var $ytFrame = $(e);
+                var ytKey; var tmp = $ytFrame.attr('src').split(/\//); tmp = tmp[tmp.length - 1]; tmp = tmp.split('?'); ytKey = tmp[0];
+                var $ytLoader = $('<div class="ytLoader">');
+                $ytLoader.append($('<img class="cover" src="https://i.ytimg.com/vi/'+ytKey+'/hqdefault.jpg">'));
+                $ytLoader.append($('<img class="playBtn" src="play_button.png">'));
+                $ytLoader.data('$ytFrame',$ytFrame);
+                $ytFrame.replaceWith($ytLoader);
+                $ytLoader.click(function () {
+                    var $ytFrame = $ytLoader.data('$ytFrame');
+                    $ytFrame.attr('src',$ytFrame.attr('src')+'?autoplay=1');
+                    $ytLoader.replaceWith($ytFrame);
+                });
+            });
+        };
 
 
    $(document).ready(function () {
+
+    youTubes_makeDynamic();
 
     $('span.dropdown-toggle').on('click', function(e) {
       e.stopPropagation();
@@ -1597,16 +1615,6 @@ $(window).load(function(){
   });
 
 
-var video_wrapper = $('.youtube-video-place');
-//  Check to see if youtube wrapper exists
-if(video_wrapper.length){
-// If user clicks on the video wrapper load the video.
-$('.play-youtube-video').on('click', function(){
-/* Dynamically inject the iframe on demand of the user.
- Pull the youtube url from the data attribute on the wrapper element. */
-video_wrapper.html('<iframe allowfullscreen frameborder="0" class="embed-responsive-item" src="' + video_wrapper.data('yt-url') + '"></iframe>');
-});
-}
 
 
 
