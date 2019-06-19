@@ -1613,7 +1613,11 @@ $(window).load(function(){
 
         });
 
-        // add animation on view port to all the images
+
+        // add animation on viewport to all the images
+        $(function(){
+            new WOW().init(); 
+        });
         $('body img').addClass('fadeIn wow').attr('data-wow-duration', '4s');
        
 
