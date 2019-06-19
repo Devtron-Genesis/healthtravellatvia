@@ -1597,7 +1597,6 @@ $(window).load(function(){
   });
 
 
-
 var video_wrapper = $('.youtube-video-place');
 //  Check to see if youtube wrapper exists
 if(video_wrapper.length){
