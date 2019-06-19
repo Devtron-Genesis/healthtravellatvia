@@ -18,9 +18,9 @@ stylesheets[print][] = css/animate.css
 ;scripts[] = js/jquery.min.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/scripts.js
-scripts[] = js/jquery.swipebox.min.js
-scripts[] = js/jquery.lazy.plugins.min.js
-scripts[] = js/jquery.lazy.min.js
+;scripts[] = js/jquery.swipebox.min.js
+;scripts[] = js/jquery.lazy.plugins.min.js
+;scripts[] = js/jquery.lazy.min.js
 scripts[] = js/wow.min.js
 
 ; Regions
