@@ -1584,7 +1584,9 @@ $(window).load(function(){
 
         });
 
-
+        // add animation on view port to all the images
+        $('body img').addClass('fadeIn wow').attr('data-wow-duration', '4s');
+       
 
 
 
