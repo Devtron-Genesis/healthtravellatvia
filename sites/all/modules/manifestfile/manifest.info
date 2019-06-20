@@ -1,0 +1,14 @@
+name = Manifest file
+core = 7.x
+version = 7.x-1.x
+
+files[] = manifest.module
+
+configure = admin/config/system
+
+; Information added by Drupal.org packaging script on 2018-03-05
+version = "7.x-1.0"
+core = "7.x"
+project = "manifestfile"
+datestamp = "1520230686"
+
